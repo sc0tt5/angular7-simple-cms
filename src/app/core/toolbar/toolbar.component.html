@@ -1,0 +1,40 @@
+<div class="toolbar">
+  <mat-toolbar class="toolbar-background">
+    <!-- color="primary" -->
+
+    <mat-toolbar-row>
+      <div>
+
+        <a
+          class="ng-title-icon"
+          href="http://angular.io"
+          target="_blank">
+          <i></i>
+        </a>
+        <span class="title">{{ title }}</span>
+
+        <!-- nav to settings -->
+        <button
+          *ngIf="router.url != '/settings'"
+          mat-icon-button
+          class="toolbar-settings"
+          [routerLink]="['/settings']"
+          routerLinkActive="router-link-active">
+          <mat-icon>settings</mat-icon>
+        </button>
+
+        <!-- nav to items -->
+        <button
+          *ngIf="router.url != '/items'"
+          mat-icon-button
+          class="toolbar-settings"
+          [routerLink]="['/items']"
+          routerLinkActive="router-link-active">
+          <mat-icon>view_module</mat-icon>
+        </button>
+
+      </div>
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+</div>

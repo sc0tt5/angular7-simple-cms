@@ -1,0 +1,74 @@
+
+@import 'layout/grid';
+
+.container {
+    margin-top: 75px;
+    margin-bottom: 50px;
+}
+
+mat-card {
+    margin: 0 0 20px 0;
+    cursor: pointer;
+    mat-card-title {
+        position: relative;
+        width: 75%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 18px;
+    }
+    .date {
+        position: absolute;
+        top: 25px;
+        right: 24px;
+        font-size: 10px;
+        color: #db5e93;
+        font-family: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    }
+    mat-card-subtitle {
+        min-height: 60px;
+    }
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+        mat-card-subtitle {
+            min-height: auto;
+        }
+    }
+}
+
+/* loader - kudos https://github.com/MatejKustec/SpinThatShit  */
+
+.page-load-status {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: relative;
+    animation: page-load-status 0.5s ease alternate infinite;
+    animation-delay: (0.5s / 5) * 2;
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        animation: page-load-status 0.5s ease alternate infinite;
+    }
+    &::before {
+        left: -(15px + 12px);
+        animation-delay: (0.5s / 5) * 1;
+    }
+    &::after {
+        right: -(15px + 12px);
+        animation-delay: (0.5s / 5) * 3;
+    }
+    top: 0%;
+    margin: -(15px + 85px / 2) auto 0;
+    @keyframes page-load-status {
+        0% {
+            box-shadow: 0 15px 0 (-15px) rgba(0, 0, 0, 0.2);
+        }
+        100% {
+            box-shadow: 0 15px 0 rgba(0, 0, 0, 0.4);
+        }
+    }
+}

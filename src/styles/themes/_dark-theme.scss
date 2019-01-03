@@ -1,0 +1,12 @@
+// https://material.io/design/color/#tools-for-picking-colors
+// mat-palette($base-palette, $default, $lighter, $darker)
+
+$app-dark-primary: mat-palette($mat-grey, 800, 600, 700);
+$app-dark-accent: mat-palette($mat-grey, 900, 700, 900);
+$app-dark-warn: mat-palette($mat-red, 500);
+
+$app-dark-theme: mat-dark-theme(
+   $app-dark-primary,
+   $app-dark-accent,
+   $app-dark-warn
+);

@@ -1,0 +1,32 @@
+<!-- page loading -->
+<app-spinner *ngIf="pageloading$ | async"></app-spinner>
+
+<!-- items list -->
+<div *ngIf="items$ | async as items">
+  <div class="container">
+    <div
+      class="row align-items-end"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()">
+      <div
+        *ngFor="let item of items; trackBy: byId"
+        class="col-md-6 col-lg-4"
+        [ngClass]="animateOnRouteEnter">
+        <mat-card>
+          <!-- <mat-card [routerLink]="['/item/', item.id]"> -->
+          <mat-card-title>{{ item.name }}</mat-card-title>
+          <span class="date">{{ item.publishDate | date }}</span>
+          <mat-card-subtitle>{{ item.headline }}</mat-card-subtitle>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- scroll loading -->
+<div
+  *ngIf="scrollloading$ | async"
+  class="page-load-status">
+</div>

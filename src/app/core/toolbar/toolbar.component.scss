@@ -1,0 +1,21 @@
+.toolbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.ng-title-icon>i {
+    background-image: url('../../../assets/ng.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 1.2em;
+}
+
+.title {
+    margin-right: 1em;
+}
+
+.toolbar-settings {
+  outline: none;
+}

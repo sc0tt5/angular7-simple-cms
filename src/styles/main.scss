@@ -1,0 +1,52 @@
+// https://sass-guidelin.es/#architecture
+
+// vendors
+@import '~bootstrap/scss/bootstrap-reboot',
+        '~bootstrap/scss/bootstrap-grid';
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+// configuration (variables also used per angular component as needed)
+@import 'base/variables';
+
+// layout (used per angular component as needed)
+
+// themes
+@import 'themes/dark-theme',
+        'themes/light-theme';
+
+// used for applying selected theme
+@mixin custom-components-theme($theme) {
+
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  .wrapper, .container, .mat-toolbar, .page-load-status {
+    background-color: mat-color($primary);
+  }
+
+  .mat-card {
+    background: mat-color($accent) !important;
+  }
+
+}
+
+.dark-theme {
+  @include angular-material-theme($app-dark-theme);
+  @include custom-components-theme($app-dark-theme);
+}
+
+.light-theme {
+  @include angular-material-theme($app-light-theme);
+  @include custom-components-theme($app-light-theme);
+}
+
+// defaults
+html,
+body {
+    font-family: $font-family;
+    height: 100%;
+    margin: 0px;
+}

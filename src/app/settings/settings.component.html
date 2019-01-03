@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Theme</h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6 group">
+      <div class="icon-form-field">
+        <mat-form-field>
+          <mat-select
+            [placeholder]="'Color Theme'"
+            [ngModel]="settings?.theme"
+            (selectionChange)="onSelect($event)"
+            name="themes">
+            <mat-option
+              *ngFor="let theme of themes"
+              [value]="theme.value">
+              {{ theme.label }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</div>
