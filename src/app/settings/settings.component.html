@@ -11,7 +11,7 @@
         <mat-form-field>
           <mat-select
             [placeholder]="'Color Theme'"
-            [ngModel]="settings?.theme"
+            [ngModel]="selected"
             (selectionChange)="onSelect($event)"
             name="themes">
             <mat-option
