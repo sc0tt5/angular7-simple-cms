@@ -4,6 +4,7 @@
 <!-- items list -->
 <div *ngIf="items$ | async as items">
   <div class="container">
+
     <div
       class="row align-items-end"
       infiniteScroll
@@ -22,11 +23,12 @@
         </mat-card>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- scroll loading -->
-<div
-  *ngIf="scrollloading$ | async"
-  class="page-load-status">
+    <!-- scroll loading -->
+    <div
+      *ngIf="scrollloading$ | async"
+      class="page-load-status">
+    </div>
+
+  </div>
 </div>

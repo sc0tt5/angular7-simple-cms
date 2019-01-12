@@ -8,7 +8,7 @@ export interface ThemeState {
 }
 
 export const initialState: ThemeState = {
-  active: 'LIGHT-THEME',
+  active: 'DARK-THEME',
   themes: [],
   error: false
 };

@@ -1,6 +1,7 @@
 import { Component, Input, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { Theme } from '@app/core';
 import { ThemeDispatchers } from '@app/store';
+import { ThemeState } from '@app/store/reducers/theme.reducer';
 
 @Component({
   selector: 'app-settings',
@@ -10,15 +11,16 @@ import { ThemeDispatchers } from '@app/store';
 })
 
 export class SettingsComponent implements OnInit {
-  selected: Theme;
+  selected: ThemeState;
+
   themes = [
-    {
-      'value': 'LIGHT-THEME',
-      'label': 'Light'
-    },
     {
       'value': 'DARK-THEME',
       'label': 'Dark'
+    },
+    {
+      'value': 'LIGHT-THEME',
+      'label': 'Light'
     }
   ];
 
@@ -31,7 +33,6 @@ export class SettingsComponent implements OnInit {
   ngOnInit() { }
 
   onSelect(theme) {
-    console.log(theme);
     this.themeDispatchers.changeTheme(theme.value);
   }
 

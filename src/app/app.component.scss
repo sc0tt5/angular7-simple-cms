@@ -1,4 +1,9 @@
 .wrapper {
   display: flex;
   flex-flow: column;
+  height: 100%;
+}
+
+.content {
+  background-color: inherit;
 }

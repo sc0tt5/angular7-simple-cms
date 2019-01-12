@@ -62,7 +62,8 @@ mat-card {
         animation-delay: (0.5s / 5) * 3;
     }
     top: 0%;
-    margin: -(15px + 85px / 2) auto 0;
+    // margin: -(15px + 85px / 2) auto 0;
+    margin: auto;
     @keyframes page-load-status {
         0% {
             box-shadow: 0 15px 0 (-15px) rgba(0, 0, 0, 0.2);
